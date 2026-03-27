@@ -1,0 +1,9 @@
+def check_known_errors(query):
+
+    if "disk full" in query.lower():
+        return "Run cleanup: sudo rm -rf /tmp/*"
+
+    if "permission denied" in query.lower():
+        return "Check IAM role or chmod"
+
+    return None

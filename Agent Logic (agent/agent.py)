@@ -1,0 +1,22 @@
+from agent.decision import classify_intent
+from agent.tools import run_tool
+from intercepts.known_errors import check_known_errors
+
+def handle_request(query):
+
+    # Step 1: Check known issues (NO LLM)
+    intercept = check_known_errors(query)
+    if intercept:
+        return intercept
+
+    # Step 2: Classify intent
+    intent = classify_intent(query)
+
+    # Step 3: Call tools
+    if intent == "cpu_issue":
+        return run_tool("check_cpu")
+
+    elif intent == "restart_service":
+        return run_tool("restart_service")
+
+    return "No action found"

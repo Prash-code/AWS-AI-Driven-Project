@@ -1,0 +1,5 @@
+import random
+
+def get_cpu():
+    # simulate CPU
+    return random.randint(50, 95)

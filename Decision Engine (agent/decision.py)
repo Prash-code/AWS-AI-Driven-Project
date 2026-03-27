@@ -1,0 +1,11 @@
+def classify_intent(query):
+
+    query = query.lower()
+
+    if "cpu" in query:
+        return "cpu_issue"
+
+    if "restart" in query:
+        return "restart_service"
+
+    return "unknown"

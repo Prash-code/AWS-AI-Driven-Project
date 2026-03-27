@@ -1,0 +1,20 @@
+ai-l1-automation/
+│
+├── app.py
+├── agent/
+│   ├── agent.py
+│   ├── tools.py
+│   ├── decision.py
+│
+├── aws/
+│   ├── ssm.py
+│   ├── cloudwatch.py
+│
+├── rag/
+│   ├── rag_engine.py
+│
+├── intercepts/
+│   ├── known_errors.py
+│
+├── requirements.txt
+└── README.md
